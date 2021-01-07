@@ -8,7 +8,7 @@
 
 int main(){
 	//client pipe
-	char clientN[256];
+	char clientN[32];
 
 	sprintf(clientN, "%d", getpid());
 	mkfifo(clientN, 0644);

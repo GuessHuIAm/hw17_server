@@ -7,7 +7,7 @@
 
 int main() {
 	while(1){
-		printf("WKP created\n");
+		printf("WKP created.\n");
 		mkfifo("WKP", 0644);
 
 		printf("Waiting for connection from client...\n");
@@ -15,7 +15,7 @@ int main() {
 
 		char clientN[32];
     		read(server, clientN, sizeof(clientN));
-		printf("Client pipe %s was connected\n", clientN);
+		printf("Client pipe %s was connected.\n", clientN);
     		remove("WKP");
 		printf("WKP removed\n");
 
@@ -26,9 +26,9 @@ int main() {
 		printf("Acknowledgement <Howdy!> sent\n");
 
 		//server reads from client
-    		char buffer[32];
-    		read(server, buffer, sizeof(buffer));
-    		printf("Acknowledgement from client received <%s>\n", buffer);
+    		char message[32];
+    		read(server, message, sizeof(message));
+    		printf("Acknowledgement from client received <%s>\n", message);
 
 		int input = 0;
 		int answer = 0;
